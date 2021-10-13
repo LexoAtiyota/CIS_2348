@@ -1,13 +1,11 @@
-import csv
-filename = input()
-with open(filename, 'r') as file:
-    reader = csv.reader(file, delimiter = ',')
-    result = dict()
-    for i in reader:
-        for j in i:
-            if j in result:
-                result[j] = result[j] + 1
-            else:
-                result[j] = 1
-    for k in list(result.keys()):
-        print("{} {}".format(k, result[k]))
+user_input = input()
+normal = ""
+reverse = ""
+for ch in user_input.lower():
+    if ch != ' ':
+        normal += ch
+        reverse = ch + reverse
+if normal == reverse:
+    print(user_input + " is a palindrome")
+else:
+    print(user_input + " is not a palindrome")
